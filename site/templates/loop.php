@@ -29,26 +29,10 @@
     </div>
   <?php endforeach; ?>
 
-
-
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
   <script>
-    <?php 
-      $duration = $page->duration()->toInt();
-
-      $highlightPages = $page->highlights()->toPages();
-      // $highlightTime = [];
-
-      foreach ($highlightPages as $highlight) {
-        $time = $highlight->time();
-        // array_push($highlightTime, $time);
-      };
-
-      // print_r($highlightTime);
-    ?>
-
-    // console.log(<?= $pageTime ?>);
+    <?php $duration = $page->duration()->toInt(); ?>
 
     // Main Carousel
     let main = document.querySelector('.main-carousel');
@@ -78,23 +62,22 @@
         imagesLoaded: true
       });
       // Datetime Activation
-      let datetimeString = document.querySelector('.highlight-0').getAttribute('datetime');
+      let datetimeString = nowCarousel.getAttribute('datetime');
       let datetimeArray = datetimeString.split(':');
+
+      console.log(now, Number(datetimeArray[0]), Number(datetimeArray[1]));
+
+      var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), Number(datetimeArray[0]), Number(datetimeArray[1]), 0, 0) - now;
+      if (millisTill10 < 0) {
+          millisTill10 += 86400000; // it's after 10am, try 10am tomorrow.
+      }
+      setTimeout(function(){
+        document.querySelector('.highlight-0').style.opacity = "100%";
+        setInterval(function() {
+          document.querySelector('.highlight-0').style.opacity = "0";
+        }, 1000 * 600)
+      }, millisTill10);
     }
-
-    
-
-    // let datetimeString = document.querySelector('.highlight-0').getAttribute('datetime');
-    // let datetimeArray = datetimeString.split(':')
-    console.log(now, Number(datetimeArray[0]), Number(datetimeArray[1]));
-
-    var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), Number(datetimeArray[0]), Number(datetimeArray[1]), 0, 0) - now;
-    if (millisTill10 < 0) {
-        millisTill10 += 86400000; // it's after 10am, try 10am tomorrow.
-    }
-    setTimeout(function(){
-      document.querySelector('.highlight-0').style.opacity = "100%";
-    }, millisTill10);
   </script>
 </body>
 </html>
