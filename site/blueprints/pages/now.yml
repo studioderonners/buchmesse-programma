@@ -1,0 +1,20 @@
+title: What's On
+
+columns:
+  main:
+    width: 2/3
+    fields:
+      time:
+        label: Time
+        type: time
+        # display: HH:ss
+        step:
+          unit: second
+      slides:
+        label: Loop Slides
+        type: files
+        required: true
+        layout: cards
+        image:
+          cover: true
+          ratio: 3/4

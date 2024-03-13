@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  position: relative;
+  width: 576px;
+  height: 768px;
+}
+
+.main-carousel,
+.highlight-carousel {
+  width: 576px;
+  height: 768px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.highlight-carousel {
+  opacity: 0;
+  z-index: 10;
+}
