@@ -31,6 +31,7 @@
 
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
+
   <script>
     <?php $duration = $page->duration()->toInt(); ?>
 
@@ -51,9 +52,9 @@
 
     var now = new Date();
 
-    for (let nowCarousel of highlightsArray) {
+    for (let n=0; n<highlightsArray.length; n++) {
       // Activate Flickty
-      let nowFlickty = new Flickity(nowCarousel, {
+      let nowFlickty = new Flickity(highlightsArray[n], {
         cellAlign: 'center',
         prevNextButtons: false,
         pageDots: false,
@@ -61,20 +62,20 @@
         fade: true,
         imagesLoaded: true
       });
-      // Datetime Activation
-      let datetimeString = nowCarousel.getAttribute('datetime');
-      let datetimeArray = datetimeString.split(':');
 
-      console.log(now, Number(datetimeArray[0]), Number(datetimeArray[1]));
+      // Datetime Activation
+      let datetimeString = highlightsArray[n].getAttribute('datetime');
+      let datetimeArray = datetimeString.split(':');
 
       var millisTill10 = new Date(now.getFullYear(), now.getMonth(), now.getDate(), Number(datetimeArray[0]), Number(datetimeArray[1]), 0, 0) - now;
       if (millisTill10 < 0) {
-          millisTill10 += 86400000; // it's after 10am, try 10am tomorrow.
+          millisTill10 += 86400000;
       }
+
       setTimeout(function(){
-        document.querySelector('.highlight-0').style.opacity = "100%";
+        document.querySelector(`.highlight-${n}`).style.opacity = "100%";
         setInterval(function() {
-          document.querySelector('.highlight-0').style.opacity = "0";
+          document.querySelector(`.highlight-${n}`).style.opacity = "0";
         }, 1000 * 600)
       }, millisTill10);
     }

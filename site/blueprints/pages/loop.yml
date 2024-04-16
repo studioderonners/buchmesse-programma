@@ -16,10 +16,22 @@ columns:
         label: Slide Duration
         type: number
         after: ms
+        default: 8000
   aside:
     width: 1/3
     sections:
+      cover:
+        type: files
+        label: Cover
+        layout: cards
+        info: "{{ file.dimensions }}"
+        template: cover
+        multiple: false
+        image:
+          ratio: 3/4
+          cover: true
       highlights:
         label: Highlights
         type: pages
         template: now
+        info: "{{ page.time }}"

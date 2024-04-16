@@ -7,7 +7,6 @@ columns:
       time:
         label: Time
         type: time
-        # display: HH:ss
         step:
           unit: second
       slides:

@@ -1,0 +1,14 @@
+title: Videos
+
+columns:
+  main:
+    width: 2/2
+    fields:
+      slides:
+        label: Video Slides
+        type: files
+        required: true
+        layout: cards
+        image:
+          cover: true
+          ratio: 3/4
