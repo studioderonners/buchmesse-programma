@@ -1,0 +1,49 @@
+title: Blanket
+icon: file
+
+status:
+  draft: Draft
+  listed: Published
+
+columns:
+  left:
+    width: 3/4
+    fields:
+      headline:
+        type: text
+        width: 3/4
+        required: true
+      year:
+        type: number
+        min: 2000
+        default: 2024
+        required: true
+        width: 1/4
+      author:
+        type: text
+        width: 2/4
+        required: true
+      link:
+        type: url
+        width: 2/4
+      info:
+        type: textarea
+        width: 1/1
+        size: medium
+      gallery:
+        type: files
+        layout: cards
+        image:
+          cover: true
+          ratio: 1/1
+
+  right:
+    width: 1/4
+    sections:
+      files:
+        label: My Files
+        template: cover
+        layout: cards
+        image:
+          cover: true
+          ratio: 3/4

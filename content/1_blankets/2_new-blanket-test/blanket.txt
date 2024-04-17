@@ -1,0 +1,21 @@
+Title: new blanket test
+
+----
+
+Headline: Blanket Title
+
+----
+
+Year: 2024
+
+----
+
+Author: Gino Bud Hoiting
+
+----
+
+Link: 
+
+----
+
+Uuid: zmyxYuiyVltJalM2

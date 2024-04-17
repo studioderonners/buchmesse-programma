@@ -1,0 +1,15 @@
+title: Blankets
+icon: file
+
+sections:
+  pages:
+    label: Blankets
+    type: pages
+    parent: kirby.page('blankets')
+    template: blanket
+    layout: cards
+    info: "{{ page.author }}"
+    image:
+      query: page.images.template("cover").first
+      cover: true
+      ratio: 3/4

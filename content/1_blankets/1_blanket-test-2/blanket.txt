@@ -1,0 +1,48 @@
+Title: A Touch Of Tenderness
+
+----
+
+Headline: A Touch Of Tenderness
+
+----
+
+Year: 2024
+
+----
+
+Author: studio de Ronners
+
+----
+
+Link: https://www.deronners.com/
+
+----
+
+Info: 
+
+----
+
+Gallery:
+
+- file://FqFxbOIH78D3S70h
+- file://kufDe7GURJw6WyB2
+
+----
+
+Tags: 
+
+----
+
+Intro: 
+
+----
+
+Text: 
+
+----
+
+Cover: - file://HsNvYsqFZRQiRG05
+
+----
+
+Uuid: zBu1DLOquTNUwovR

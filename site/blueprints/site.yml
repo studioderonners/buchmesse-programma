@@ -2,11 +2,4 @@ title: Site
 
 sections:
   pages:
-    label: Loops
     type: pages
-    template: loop
-    layout: cards
-    image:
-      query: page.images.template("cover").first
-      cover: true
-      ratio: 3/4
